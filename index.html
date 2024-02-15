@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Explorer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="assets/bootstrap-5.3.2-dist/css/bootstrap-grid.min.css" rel="stylesheet">
+    <script src="/js/script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h1 class="mt-4 mb-4 titleHead">El lago musical</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title green">Rana</h2>
+                        <img src="assets/images/frog.webp"  width="300"  height="300" class="card-img-top animal-img mx-auto d-block" alt="Imagen de Rana">
+                        <div class="list-group" id="rana-sounds">
+                            <a href="#" class="sound-box" onclick="mostrarCancion('brr')">brr</a>
+                            <a href="#" class="sound-box" onclick="mostrarCancion('birip')">birip</a>
+                            <a href="#" class="sound-box" onclick="mostrarCancion('brrah')">brrah</a>
+                            <a href="#" class="sound-box" onclick="mostrarCancion('croac')">croac</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title greenSoft">Libélula</h2>
+                        <img src="assets/images/dragon-fly.jpg" width="300"  height="300" class="card-img-top animal-img mx-auto d-block" alt="Imagen de Rana">
+                        <div class="list-group" id="libelula-sounds">
+                            <a href="#" class="sound-box" onclick="mostrarCancion('fiu')">fiu</a>
+                            <a href="#" class="sound-box" onclick="mostrarCancion('plop')">plop</a>
+                            <a href="#" class="sound-box" onclick="mostrarCancion('pep')">pep</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title brown">Grillo</h2>
+                        <img src="assets/images/cricket.webp" width="200"  height="150" class="card-img-top mb-2 mx-auto d-block" alt="Imagen de Rana">
+                        <div class="list-group" id="grillo-sounds">
+                            <a href="#" class="sound-box" onclick="mostrarCancion('cric-cric')">cric-cric</a>
+                            <a href="#" class="sound-box" onclick="mostrarCancion('trri-trri')">trri-trri</a>
+                            <a href="#" class="sound-box" onclick="mostrarCancion('bri-bri')">bri-bri</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="song" class="mt-4"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enlace al archivo JavaScript de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

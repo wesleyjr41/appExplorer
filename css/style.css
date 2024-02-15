@@ -1,0 +1,48 @@
+#song {
+    margin-top: 20px;
+}
+
+.animal-img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.sound-box {
+    width: 70px;
+    height: 70px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: #e9ecef;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ced4da;
+}
+
+h1 {
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+
+.green{
+    color: green;
+}
+
+.greenSoft{
+    color: rgb(38, 73, 38);
+}
+
+.brown{
+    color: rgb(158, 130, 47);
+}
+
+.titleHead{
+    color: rgb(9, 10, 10);
+}
+
+.list-group a {
+    color: black;
+  }
