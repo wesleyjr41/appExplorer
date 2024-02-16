@@ -6,26 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Explorer</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="assets/bootstrap-5.3.2-dist/css/bootstrap-grid.min.css" rel="stylesheet">
-    <script src="/js/script.js"></script>
+    <link href="assets/bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+       // Función para mostrar los sonidos correspondientes al sonido seleccionado
+function mostrarCancion(sonido) {
+    // Mapa de los sonidos correspondientes según las reglas dadas
+    var sonidosCorrespondientes = {
+        "brr": ["fiu", "cric-cric", "brrah"],
+        "birip": ["trri-trri", "croac"],
+        "plop": ["cric-cric", "brrah"],
+        "croac": [],
+        "brrah": [],
+        "fiu": [],
+    };
+
+    // Obtener los sonidos correspondientes al sonido seleccionado
+    var sonidos = sonidosCorrespondientes[sonido];
+
+    // Si no hay sonidos correspondientes, salir de la función sin abrir el modal
+    if (!sonidos || sonidos.length === 0) {
+        return;
+    }
+
+    // Obtener el elemento donde se mostrarán los sonidos correspondientes
+    var songContainer = document.getElementById("song");
+
+    // Restablecer el contenido del contenedor de los sonidos correspondientes
+    songContainer.innerHTML = '';
+
+    // Mostrar los sonidos correspondientes
+    var sonidosCaja = sonidos.map(function(sound) {
+        return '<div class="sound-box">' + sound + '</div>';
+    }).join('');
+
+    songContainer.innerHTML = sonidosCaja;
+}
+    </script>
 </head>
 
 <body>
+    <nav class="navbar navbar-dark bg-success">
+        <a class="navbar-brand m-2" href="#">
+            El lago musical
+        </a>
+    </nav>
     <div class="container">
         <div class="text-center">
-            <h1 class="mt-4 mb-4 titleHead">El lago musical</h1>
+            <h1 class="mt-4 mb-4 titleHead"></h1>
         </div>
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
                         <h2 class="card-title green">Rana</h2>
-                        <img src="assets/images/frog.webp"  width="300"  height="300" class="card-img-top animal-img mx-auto d-block" alt="Imagen de Rana">
-                        <div class="list-group" id="rana-sounds">
-                            <a href="#" class="sound-box" onclick="mostrarCancion('brr')">brr</a>
-                            <a href="#" class="sound-box" onclick="mostrarCancion('birip')">birip</a>
-                            <a href="#" class="sound-box" onclick="mostrarCancion('brrah')">brrah</a>
-                            <a href="#" class="sound-box" onclick="mostrarCancion('croac')">croac</a>
+                        <img src="assets/images/frog.webp" class="card-img-top animal-img  d-block"
+                            alt="Imagen de Rana">
+                        <div class="list-group container" id="rana-sounds">
+                            <div class="row">
+                                <button type="button" class="sound-box col-sm btn-primary " data-toggle="modal" data-target="#exampleModal" onclick="mostrarCancion('brr')">brr</button>
+                                <button type="button" class="sound-box col-sm btn-primary " data-toggle="modal" data-target="#exampleModal" onclick="mostrarCancion('birip')">birip</button>
+                                <button type="button" class="sound-box col-sm btn-primary " >brrah</button>
+                                <button type="button" class="sound-box col-sm btn-primary " >croac</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -34,11 +76,14 @@
                 <div class="card">
                     <div class="card-body">
                         <h2 class="card-title greenSoft">Libélula</h2>
-                        <img src="assets/images/dragon-fly.jpg" width="300"  height="300" class="card-img-top animal-img mx-auto d-block" alt="Imagen de Rana">
-                        <div class="list-group" id="libelula-sounds">
-                            <a href="#" class="sound-box" onclick="mostrarCancion('fiu')">fiu</a>
-                            <a href="#" class="sound-box" onclick="mostrarCancion('plop')">plop</a>
-                            <a href="#" class="sound-box" onclick="mostrarCancion('pep')">pep</a>
+                        <img src="assets/images/dragon-fly.jpg" class="card-img-top animal-img mx-auto d-block"
+                            alt="Imagen de Rana">
+                        <div class="list-group container" id="libelula-sounds">
+                            <div class="row">
+                                <button type="button" class="sound-box col-sm btn-primary ">fiu</button>
+                                <button type="button" class="sound-box col-sm btn-primary " data-toggle="modal" data-target="#exampleModal" onclick="mostrarCancion('plop')">plop</button>
+                                <button type="button" class="sound-box col-sm btn-primary ">pep</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -47,11 +92,14 @@
                 <div class="card">
                     <div class="card-body">
                         <h2 class="card-title brown">Grillo</h2>
-                        <img src="assets/images/cricket.webp" width="200"  height="150" class="card-img-top mb-2 mx-auto d-block" alt="Imagen de Rana">
-                        <div class="list-group" id="grillo-sounds">
-                            <a href="#" class="sound-box" onclick="mostrarCancion('cric-cric')">cric-cric</a>
-                            <a href="#" class="sound-box" onclick="mostrarCancion('trri-trri')">trri-trri</a>
-                            <a href="#" class="sound-box" onclick="mostrarCancion('bri-bri')">bri-bri</a>
+                        <img src="assets/images/cricket.webp" class="card-img-top animal-img  mx-auto d-block"
+                            alt="Imagen de Rana">
+                        <div class="list-group container" id="grillo-sounds">
+                            <div class="row">
+                                <button type="button" class="sound-box col-sm btn-primary ">cric-cric</button>
+                                <button type="button" class="sound-box col-sm btn-primary ">trri-trri</button>
+                                <button type="button" class="sound-box col-sm btn-primary ">bri-bri</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -59,10 +107,26 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div id="song" class="mt-4"></div>
+                
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Canción</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div id="song" class="mt-4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!-- Enlace al archivo JavaScript de Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
